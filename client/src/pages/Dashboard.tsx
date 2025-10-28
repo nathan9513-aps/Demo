@@ -173,9 +173,9 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="space-y-6">
               <AccountBalanceCard
-                balance={4500.00}
+                balance={4067.30}
                 accountNumber="CH93 0076 2011 6238 5295 7"
-                availableBalance={4500.00}
+                availableBalance={4067.30}
                 pendingAmount={0}
               />
               <QuickActions />

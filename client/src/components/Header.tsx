@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Bell, User, Menu } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import yuhLogo from "@assets/unnamed_1761676414532.png";
 
 export default function Header() {
@@ -35,6 +36,7 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <div className="relative">
               <Button variant="ghost" size="icon" data-testid="button-notifications">
                 <Bell className="w-5 h-5" />
