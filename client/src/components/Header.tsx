@@ -54,7 +54,7 @@ export default function Header() {
             </Button>
             <Avatar className="w-9 h-9 cursor-pointer hover-elevate active-elevate-2" data-testid="button-profile">
               <AvatarFallback className="bg-gradient-to-br from-primary/20 to-purple-600/20 text-primary font-semibold">
-                MR
+                N
               </AvatarFallback>
             </Avatar>
           </div>

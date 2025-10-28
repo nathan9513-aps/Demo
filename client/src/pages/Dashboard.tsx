@@ -166,7 +166,7 @@ export default function Dashboard() {
       <main className="container mx-auto px-6 py-8">
         <div className="max-w-7xl mx-auto space-y-6">
           <div>
-            <h2 className="text-3xl font-bold mb-2">Ciao, Mario</h2>
+            <h2 className="text-3xl font-bold mb-2">Ciao, Nathan</h2>
             <p className="text-muted-foreground">Ecco una panoramica del tuo conto Yuh</p>
           </div>
 
