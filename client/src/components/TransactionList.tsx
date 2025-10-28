@@ -35,10 +35,10 @@ export default function TransactionList({ transactions }: TransactionListProps) 
   });
 
   return (
-    <Card className="p-6">
+    <Card className="p-6 shadow-md">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold">Transazioni</h2>
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <h2 className="text-2xl font-bold">Transazioni</h2>
           <Button variant="outline" size="sm" data-testid="button-download">
             <Download className="w-4 h-4 mr-2" />
             Esporta
@@ -47,7 +47,7 @@ export default function TransactionList({ transactions }: TransactionListProps) 
 
         <div className="flex gap-3">
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
             <Input
               type="search"
               placeholder="Cerca transazioni..."
@@ -59,7 +59,7 @@ export default function TransactionList({ transactions }: TransactionListProps) 
           </div>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           {filters.map((filter) => (
             <Button
               key={filter.id}
@@ -73,18 +73,23 @@ export default function TransactionList({ transactions }: TransactionListProps) 
           ))}
         </div>
 
-        <div className="space-y-0 max-h-[600px] overflow-y-auto">
+        <div className="space-y-0 max-h-[600px] overflow-y-auto custom-scrollbar pr-2 -mr-2">
           {filteredTransactions.length > 0 ? (
-            filteredTransactions.map((transaction) => (
-              <TransactionItem 
-                key={transaction.id} 
-                transaction={transaction}
-                onClick={transaction.onClick}
-              />
+            filteredTransactions.map((transaction, index) => (
+              <div 
+                key={transaction.id}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 20}ms` }}
+              >
+                <TransactionItem 
+                  transaction={transaction}
+                  onClick={transaction.onClick}
+                />
+              </div>
             ))
           ) : (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">Nessuna transazione trovata</p>
+            <div className="text-center py-16 animate-fade-in">
+              <p className="text-muted-foreground text-lg">Nessuna transazione trovata</p>
             </div>
           )}
         </div>

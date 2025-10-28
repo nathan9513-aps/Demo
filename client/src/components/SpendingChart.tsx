@@ -23,13 +23,13 @@ export default function SpendingChart({ monthlySpending, categories }: SpendingC
   const totalSpent = categories.reduce((sum, cat) => sum + cat.amount, 0);
 
   return (
-    <Card className="p-6">
+    <Card className="p-6 shadow-md">
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold">Spesa Mensile</h3>
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <h3 className="text-lg font-bold">Spesa Mensile</h3>
           <div className="flex items-center gap-2 text-muted-foreground">
             <TrendingDown className="w-4 h-4" />
-            <span className="text-sm">Ottobre 2025</span>
+            <span className="text-sm font-medium">Ottobre 2025</span>
           </div>
         </div>
 
@@ -37,28 +37,34 @@ export default function SpendingChart({ monthlySpending, categories }: SpendingC
           <p className="text-3xl font-bold" data-testid="text-monthly-spending">
             {formatCurrency(totalSpent)}
           </p>
-          <p className="text-sm text-muted-foreground mt-1">Totale speso questo mese</p>
+          <p className="text-sm text-muted-foreground mt-1.5">Totale speso questo mese</p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           {categories.map((category, index) => {
             const percentage = (category.amount / totalSpent) * 100;
             return (
-              <div key={index} className="space-y-2">
+              <div key={index} className="space-y-2.5">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="font-medium">{category.name}</span>
-                  <span className="text-muted-foreground">{formatCurrency(category.amount)}</span>
+                  <div className="flex items-center gap-2">
+                    <div 
+                      className="w-3 h-3 rounded-full"
+                      style={{ backgroundColor: category.color }}
+                    />
+                    <span className="font-semibold">{category.name}</span>
+                  </div>
+                  <span className="font-medium text-muted-foreground">{formatCurrency(category.amount)}</span>
                 </div>
-                <div className="relative h-2 bg-accent rounded-full overflow-hidden">
+                <div className="relative h-2.5 bg-accent rounded-full overflow-hidden shadow-inner">
                   <div
-                    className="absolute top-0 left-0 h-full rounded-full transition-all"
+                    className="absolute top-0 left-0 h-full rounded-full transition-all duration-500 ease-out"
                     style={{
                       width: `${percentage}%`,
                       backgroundColor: category.color,
                     }}
                   />
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground font-medium">
                   {percentage.toFixed(1)}% del totale
                 </p>
               </div>

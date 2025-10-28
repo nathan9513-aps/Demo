@@ -7,15 +7,15 @@ import yuhLogo from "@assets/unnamed_1761676414532.png";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 shadow-sm">
       <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
               <img 
                 src={yuhLogo} 
                 alt="Yuh" 
-                className="w-16 h-16 object-contain"
+                className="w-14 h-14 object-contain"
               />
             </div>
           </div>
