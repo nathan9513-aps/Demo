@@ -6,7 +6,7 @@ import TransactionItem, { type Transaction } from "./TransactionItem";
 import { useState } from "react";
 
 interface TransactionListProps {
-  transactions: Transaction[];
+  transactions: (Transaction & { onClick?: () => void })[];
 }
 
 export default function TransactionList({ transactions }: TransactionListProps) {
@@ -73,10 +73,14 @@ export default function TransactionList({ transactions }: TransactionListProps) 
           ))}
         </div>
 
-        <div className="space-y-0">
+        <div className="space-y-0 max-h-[600px] overflow-y-auto">
           {filteredTransactions.length > 0 ? (
             filteredTransactions.map((transaction) => (
-              <TransactionItem key={transaction.id} transaction={transaction} />
+              <TransactionItem 
+                key={transaction.id} 
+                transaction={transaction}
+                onClick={transaction.onClick}
+              />
             ))
           ) : (
             <div className="text-center py-12">
