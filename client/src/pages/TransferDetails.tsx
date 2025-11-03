@@ -23,7 +23,7 @@ export default function TransferDetails({ transferId, onBack }: TransferDetailsP
     iban: "LT113250 0985 6136 1438",
     bank: "Revolut UAB",
     status: "processing",
-    date: new Date(2025, 10, 3, 10, 15),
+    date: new Date(2025, 10, 3, 9, 38),
     transferType: "express",
     expectedArrival: "1-2 giorni lavorativi",
     reference: "Bonifico Express"
