@@ -3,11 +3,14 @@ import AccountBalanceCard from "@/components/AccountBalanceCard";
 import TransactionList from "@/components/TransactionList";
 import SpendingChart from "@/components/SpendingChart";
 import QuickActions from "@/components/QuickActions";
+import TransferDetails from "@/pages/TransferDetails";
 import { type Transaction } from "@/components/TransactionItem";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 export default function Dashboard() {
   const { toast } = useToast();
+  const [selectedTransfer, setSelectedTransfer] = useState<string | null>(null);
 
   // Mock data for demonstration
   const mockTransactions: Transaction[] = [
@@ -162,6 +165,13 @@ export default function Dashboard() {
   ];
 
   const handleTransactionClick = (transaction: Transaction) => {
+    // Check if it's an Express transfer transaction
+    if (transaction.type === "transfer" && transaction.id === "express-1") {
+      setSelectedTransfer(transaction.id);
+      return;
+    }
+    
+    // Default behavior for other transactions
     toast({
       title: transaction.merchant,
       description: `${transaction.category} • ${new Intl.NumberFormat("de-CH", {
@@ -170,6 +180,16 @@ export default function Dashboard() {
       }).format(Math.abs(transaction.amount))}`,
     });
   };
+
+  // Show transfer details if a transfer is selected
+  if (selectedTransfer) {
+    return (
+      <TransferDetails
+        transferId={selectedTransfer}
+        onBack={() => setSelectedTransfer(null)}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
