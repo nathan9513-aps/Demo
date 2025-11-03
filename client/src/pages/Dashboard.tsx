@@ -12,6 +12,18 @@ export default function Dashboard() {
   // Mock data for demonstration
   const mockTransactions: Transaction[] = [
     {
+      id: "express-1",
+      merchant: "Bonifico Express",
+      category: "Bonifici",
+      amount: -350.00,
+      date: new Date(2025, 10, 3, 10, 15),
+      status: "pending",
+      type: "transfer",
+      recipient: "Yousef Sniba",
+      transferType: "express",
+      expectedArrival: "1-2 giorni lavorativi"
+    },
+    {
       id: "1",
       merchant: "Migros Limmatplatz",
       category: "Alimentari",
