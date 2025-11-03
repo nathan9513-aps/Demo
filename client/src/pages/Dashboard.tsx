@@ -15,7 +15,7 @@ export default function Dashboard() {
       id: "express-1",
       merchant: "Bonifico Express",
       category: "Bonifici",
-      amount: -350.00,
+      amount: -1500.00,
       date: new Date(2025, 10, 3, 10, 15),
       status: "pending",
       type: "transfer",
