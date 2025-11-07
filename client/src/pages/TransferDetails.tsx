@@ -21,7 +21,7 @@ export default function TransferDetails({ transferId, onBack }: TransferDetailsP
     amount: 1600.00,
     recipient: "Danijela Milosevic",
     iban: "CH45 8080 8009 4021 0880 2",
-    bank: "Banca Svizzera",
+    bank: "Raiffeisen",
     status: "completed",
     date: new Date(2025, 10, 7, 7, 0),
     transferType: "express",

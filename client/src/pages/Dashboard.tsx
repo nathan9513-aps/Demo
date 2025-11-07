@@ -28,12 +28,12 @@ export default function Dashboard() {
     },
     {
       id: "1",
-      merchant: "Migros Limmatplatz",
+      merchant: "Migros Lugano",
       category: "Alimentari",
       amount: -45.80,
       date: new Date(2025, 9, 27, 14, 30),
       status: "completed",
-      location: "Zurigo",
+      location: "Lugano",
     },
     {
       id: "2",
