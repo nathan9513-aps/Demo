@@ -18,15 +18,16 @@ export default function TransferDetails({ transferId, onBack }: TransferDetailsP
   // Mock transfer data - in a real app this would come from an API
   const transferData = {
     id: transferId,
-    amount: 1500.00,
-    recipient: "Yousef Sniba",
-    iban: "LT113250 0985 6136 1438",
-    bank: "Revolut UAB",
-    status: "processing",
-    date: new Date(2025, 10, 3, 9, 38),
+    amount: 1600.00,
+    recipient: "Danijela Milosevic",
+    iban: "CH45 8080 8009 4021 0880 2",
+    bank: "Banca Svizzera",
+    status: "completed",
+    date: new Date(2025, 10, 7, 7, 0),
     transferType: "express",
-    expectedArrival: "1-2 giorni lavorativi",
-    reference: "Bonifico Express"
+    expectedArrival: "Completato - L'accredito sul conto del destinatario avviene entro 24 ore dal completamento",
+    reference: "Bonifico Express",
+    address: "6600 Locarno"
   };
 
   const handleCopy = (text: string, fieldName: string) => {
@@ -134,7 +135,10 @@ export default function TransferDetails({ transferId, onBack }: TransferDetailsP
               {/* Recipient */}
               <div className="flex justify-between items-center">
                 <span className="text-muted-foreground">Destinatario</span>
-                <span className="font-medium">{transferData.recipient}</span>
+                <div className="text-right">
+                  <div className="font-medium">{transferData.recipient}</div>
+                  <div className="text-sm text-muted-foreground">{transferData.address}</div>
+                </div>
               </div>
 
               <Separator />

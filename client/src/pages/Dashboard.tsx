@@ -18,13 +18,13 @@ export default function Dashboard() {
       id: "express-1",
       merchant: "Bonifico Express",
       category: "Bonifici",
-      amount: -1500.00,
-      date: new Date(2025, 10, 3, 9, 38),
-      status: "pending",
+      amount: -1600.00,
+      date: new Date(2025, 10, 7, 7, 0),
+      status: "completed",
       type: "transfer",
-      recipient: "Yousef Sniba",
+      recipient: "Danijela Milosevic",
       transferType: "express",
-      expectedArrival: "1-2 giorni lavorativi"
+      expectedArrival: "Completato - Accredito sul conto del destinatario entro 24 ore"
     },
     {
       id: "1",
@@ -205,9 +205,9 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="space-y-6">
               <AccountBalanceCard
-                balance={4067.30}
+                balance={500.00}
                 accountNumber="CH93 0076 2011 6238 5295 7"
-                availableBalance={4067.30}
+                availableBalance={500.00}
                 pendingAmount={0}
               />
               <QuickActions />
