@@ -15,6 +15,45 @@ export default function Dashboard() {
   // Mock data for demonstration
   const mockTransactions: Transaction[] = [
     {
+      id: "piai-1",
+      merchant: "Bonifico a Edoardo Piai",
+      category: "Bonifici",
+      amount: -170.00,
+      date: new Date(2025, 10, 10, 10, 30),
+      status: "completed",
+      type: "transfer",
+      recipient: "Edoardo Piai",
+      iban: "LT13 3250 0580 5630 3841",
+      bank: "Revolut Payments UAB"
+    },
+    {
+      id: "migros-recent-1",
+      merchant: "Migros Lugano Centro",
+      category: "Alimentari",
+      amount: -52.40,
+      date: new Date(2025, 10, 9, 18, 20),
+      status: "completed",
+      location: "Lugano"
+    },
+    {
+      id: "migros-recent-2",
+      merchant: "Migros Express",
+      category: "Alimentari",
+      amount: -18.75,
+      date: new Date(2025, 10, 8, 12, 45),
+      status: "completed",
+      location: "Lugano"
+    },
+    {
+      id: "migros-recent-3",
+      merchant: "Migros",
+      category: "Casa",
+      amount: -34.90,
+      date: new Date(2025, 10, 8, 10, 15),
+      status: "completed",
+      location: "Lugano"
+    },
+    {
       id: "express-1",
       merchant: "Bonifico Express",
       category: "Bonifici",
@@ -25,18 +64,6 @@ export default function Dashboard() {
       recipient: "Danijela Milosevic",
       transferType: "express",
       expectedArrival: "Completato - Accredito sul conto del destinatario entro 24 ore"
-    },
-    {
-      id: "piai-1",
-      merchant: "Bonifico a Edoardo Piai",
-      category: "Bonifici",
-      amount: -149.82,
-      date: new Date(2025, 10, 10, 10, 30),
-      status: "completed",
-      type: "transfer",
-      recipient: "Edoardo Piai",
-      iban: "LT13 3250 0580 5630 3841",
-      bank: "Revolut Payments UAB"
     },
     {
       id: "1",

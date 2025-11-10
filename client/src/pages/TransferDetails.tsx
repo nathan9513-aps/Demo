@@ -34,7 +34,7 @@ export default function TransferDetails({ transferId, onBack }: TransferDetailsP
     } else if (transferId === "piai-1") {
       return {
         id: transferId,
-        amount: 149.82,
+        amount: 170.00,
         recipient: "Edoardo Piai",
         iban: "LT13 3250 0580 5630 3841",
         bank: "Revolut Payments UAB",
