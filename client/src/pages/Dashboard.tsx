@@ -15,14 +15,6 @@ export default function Dashboard() {
   // Mock data for demonstration
   const mockTransactions: Transaction[] = [
     {
-      id: "hsh-delivery-1",
-      merchant: "HSH Delivery SA",
-      category: "Entrate",
-      amount: 420.00,
-      date: new Date(2025, 10, 10, 13, 0),
-      status: "completed"
-    },
-    {
       id: "piai-1",
       merchant: "Bonifico a Edoardo Piai",
       category: "Bonifici",
@@ -33,6 +25,14 @@ export default function Dashboard() {
       recipient: "Edoardo Piai",
       iban: "LT13 3250 0580 5630 3841",
       bank: "Revolut Payments UAB"
+    },
+    {
+      id: "hsh-delivery-1",
+      merchant: "HSH Delivery SA",
+      category: "Entrate",
+      amount: 420.00,
+      date: new Date(2025, 10, 10, 13, 0),
+      status: "completed"
     },
     {
       id: "migros-recent-1",
