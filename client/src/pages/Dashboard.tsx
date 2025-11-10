@@ -31,7 +31,7 @@ export default function Dashboard() {
       merchant: "HSH Delivery SA",
       category: "Entrate",
       amount: 420.00,
-      date: new Date(2025, 10, 10, 13, 0),
+      date: new Date(2025, 10, 10, 12, 30),
       status: "completed"
     },
     {
