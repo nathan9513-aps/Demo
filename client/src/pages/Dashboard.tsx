@@ -15,11 +15,19 @@ export default function Dashboard() {
   // Mock data for demonstration
   const mockTransactions: Transaction[] = [
     {
+      id: "hsh-delivery-1",
+      merchant: "HSH Delivery SA",
+      category: "Entrate",
+      amount: 420.00,
+      date: new Date(2025, 10, 10, 13, 0),
+      status: "completed"
+    },
+    {
       id: "piai-1",
       merchant: "Bonifico a Edoardo Piai",
       category: "Bonifici",
       amount: -170.00,
-      date: new Date(2025, 10, 10, 10, 30),
+      date: new Date(2025, 10, 10, 13, 3),
       status: "completed",
       type: "transfer",
       recipient: "Edoardo Piai",

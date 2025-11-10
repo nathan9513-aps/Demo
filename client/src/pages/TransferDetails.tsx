@@ -39,7 +39,7 @@ export default function TransferDetails({ transferId, onBack }: TransferDetailsP
         iban: "LT13 3250 0580 5630 3841",
         bank: "Revolut Payments UAB",
         status: "completed",
-        date: new Date(2025, 10, 10, 10, 30),
+        date: new Date(2025, 10, 10, 13, 3),
         transferType: "standard",
         expectedArrival: "Completato",
         reference: "Bonifico a Edoardo Piai",
