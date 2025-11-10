@@ -16,19 +16,44 @@ export default function TransferDetails({ transferId, onBack }: TransferDetailsP
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
   // Mock transfer data - in a real app this would come from an API
-  const transferData = {
-    id: transferId,
-    amount: 1600.00,
-    recipient: "Danijela Milosevic",
-    iban: "CH45 8080 8009 4021 0880 2",
-    bank: "Raiffeisen",
-    status: "completed",
-    date: new Date(2025, 10, 7, 7, 0),
-    transferType: "express",
-    expectedArrival: "Completato - L'accredito sul conto del destinatario avviene entro 24 ore dal completamento",
-    reference: "Bonifico Express",
-    address: "6600 Locarno"
+  const getTransferData = () => {
+    if (transferId === "express-1") {
+      return {
+        id: transferId,
+        amount: 1600.00,
+        recipient: "Danijela Milosevic",
+        iban: "CH45 8080 8009 4021 0880 2",
+        bank: "Raiffeisen",
+        status: "completed",
+        date: new Date(2025, 10, 7, 7, 0),
+        transferType: "express",
+        expectedArrival: "Completato - L'accredito sul conto del destinatario avviene entro 24 ore dal completamento",
+        reference: "Bonifico Express",
+        address: "6600 Locarno"
+      };
+    } else if (transferId === "piai-1") {
+      return {
+        id: transferId,
+        amount: 149.82,
+        recipient: "Edoardo Piai",
+        iban: "LT13 3250 0580 5630 3841",
+        bank: "Revolut Payments UAB",
+        status: "completed",
+        date: new Date(2025, 10, 10, 10, 30),
+        transferType: "standard",
+        expectedArrival: "Completato",
+        reference: "Bonifico a Edoardo Piai",
+        address: ""
+      };
+    }
+    return null;
   };
+  
+  const transferData = getTransferData();
+
+  if (!transferData) {
+    return <div>Transfer non trovato</div>;
+  }
 
   const handleCopy = (text: string, fieldName: string) => {
     navigator.clipboard.writeText(text);

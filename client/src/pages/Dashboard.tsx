@@ -27,6 +27,18 @@ export default function Dashboard() {
       expectedArrival: "Completato - Accredito sul conto del destinatario entro 24 ore"
     },
     {
+      id: "piai-1",
+      merchant: "Bonifico a Edoardo Piai",
+      category: "Bonifici",
+      amount: -149.82,
+      date: new Date(2025, 10, 10, 10, 30),
+      status: "completed",
+      type: "transfer",
+      recipient: "Edoardo Piai",
+      iban: "LT13 3250 0580 5630 3841",
+      bank: "Revolut Payments UAB"
+    },
+    {
       id: "1",
       merchant: "Migros Lugano",
       category: "Alimentari",
@@ -165,8 +177,8 @@ export default function Dashboard() {
   ];
 
   const handleTransactionClick = (transaction: Transaction) => {
-    // Check if it's an Express transfer transaction
-    if (transaction.type === "transfer" && transaction.id === "express-1") {
+    // Check if it's a transfer transaction
+    if (transaction.type === "transfer" && (transaction.id === "express-1" || transaction.id === "piai-1")) {
       setSelectedTransfer(transaction.id);
       return;
     }
@@ -205,9 +217,9 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="space-y-6">
               <AccountBalanceCard
-                balance={500.00}
+                balance={350.18}
                 accountNumber="CH93 0076 2011 6238 5295 7"
-                availableBalance={500.00}
+                availableBalance={350.18}
                 pendingAmount={0}
               />
               <QuickActions />

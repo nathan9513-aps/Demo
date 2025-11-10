@@ -13,6 +13,8 @@ export interface Transaction {
   recipient?: string;
   transferType?: "express" | "standard";
   expectedArrival?: string;
+  iban?: string;
+  bank?: string;
 }
 
 interface TransactionItemProps {
