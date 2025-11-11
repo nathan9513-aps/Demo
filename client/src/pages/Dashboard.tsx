@@ -6,11 +6,20 @@ import QuickActions from "@/components/QuickActions";
 import TransferDetails from "@/pages/TransferDetails";
 import { type Transaction } from "@/components/TransactionItem";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Dashboard() {
   const { toast } = useToast();
   const [selectedTransfer, setSelectedTransfer] = useState<string | null>(null);
+
+  // Show notification for failed transfer
+  useEffect(() => {
+    toast({
+      title: "Bonifico Rifiutato",
+      description: "Il bonifico a Danijela Milosevic è stato rifiutato. Codice errore: E-771. I soldi verranno riacreditati sul tuo conto nei prossimi giorni.",
+      variant: "destructive"
+    });
+  }, []);
 
   // Mock data for demonstration
   const mockTransactions: Transaction[] = [
@@ -67,11 +76,11 @@ export default function Dashboard() {
       category: "Bonifici",
       amount: -1600.00,
       date: new Date(2025, 10, 7, 7, 0),
-      status: "completed",
+      status: "failed",
       type: "transfer",
       recipient: "Danijela Milosevic",
       transferType: "express",
-      expectedArrival: "Completato - Accredito sul conto del destinatario entro 24 ore"
+      expectedArrival: "Rifiutato - Codice errore E-771"
     },
     {
       id: "1",

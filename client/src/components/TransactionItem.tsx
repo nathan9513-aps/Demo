@@ -7,7 +7,7 @@ export interface Transaction {
   category: string;
   amount: number;
   date: Date;
-  status: "completed" | "pending";
+  status: "completed" | "pending" | "failed";
   location?: string;
   type?: "transfer" | "payment";
   recipient?: string;
@@ -151,6 +151,11 @@ export default function TransactionItem({ transaction, onClick }: TransactionIte
         {transaction.status === "pending" && (
           <Badge variant="outline" className="text-xs mt-1">
             In sospeso
+          </Badge>
+        )}
+        {transaction.status === "failed" && (
+          <Badge variant="destructive" className="text-xs mt-1">
+            Rifiutato
           </Badge>
         )}
       </div>

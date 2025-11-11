@@ -24,10 +24,10 @@ export default function TransferDetails({ transferId, onBack }: TransferDetailsP
         recipient: "Danijela Milosevic",
         iban: "CH45 8080 8009 4021 0880 2",
         bank: "Raiffeisen",
-        status: "completed",
+        status: "failed",
         date: new Date(2025, 10, 7, 7, 0),
         transferType: "express",
-        expectedArrival: "Completato - L'accredito sul conto del destinatario avviene entro 24 ore dal completamento",
+        expectedArrival: "Rifiutato - Codice errore E-771. I soldi verranno riacreditati sul tuo conto nei prossimi giorni.",
         reference: "Bonifico Express",
         address: "6600 Locarno"
       };
@@ -96,6 +96,12 @@ export default function TransferDetails({ transferId, onBack }: TransferDetailsP
         return (
           <Badge variant="default" className="bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-200">
             Completato
+          </Badge>
+        );
+      case "failed":
+        return (
+          <Badge variant="destructive" className="bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-200">
+            Rifiutato
           </Badge>
         );
       default:
